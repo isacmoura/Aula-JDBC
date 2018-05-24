@@ -1,0 +1,23 @@
+CREATE TABLE usuario(
+id SERIAL,
+nome varchar(50),
+email varchar(50),
+endereco varchar(50),
+CONSTRAINT usuario_pkey PRIMARY KEY(id)
+);
+
+CREATE TABLE livro(
+id SERIAL,
+titulo varchar(50),
+editora varchar(50),
+autor varchar(50),
+CONSTRAINT livro_pkey PRIMARY KEY(id)
+);
+
+CREATE TABLE alocacao(
+id_usuario int,
+id_livro int,
+CONSTRAINT alocacao_pkey PRIMARY KEY(id_usuario, id_livro),
+CONSTRAINT alocacao_fkey1 FOREIGN KEY (id_usuario) REFERENCES usuario(id),
+CONSTRAINT alocacao_fkey2 FOREIGN KEY (id_livro) REFERENCES livro(id)
+); 
