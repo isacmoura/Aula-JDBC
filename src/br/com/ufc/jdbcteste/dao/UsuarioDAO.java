@@ -30,9 +30,9 @@ public class UsuarioDAO {
 			
 			int rowsAffected = stmt.executeUpdate();
 			stmt.close();
-			if(rowsAffected > 0) {
+			if(rowsAffected > 0)
 				return true;
-			}
+			
 			return false;
 		}catch(SQLException e) {
 			System.err.println(e.getMessage());
@@ -44,8 +44,8 @@ public class UsuarioDAO {
 			} catch(SQLException e) {
 				e.printStackTrace();
 			}
-			return false;
 		}
+		return false;
 	}
 	
 	public ArrayList<Usuario> listarUsuarios(){

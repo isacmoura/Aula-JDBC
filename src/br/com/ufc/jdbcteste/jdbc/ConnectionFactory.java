@@ -13,7 +13,7 @@ public class ConnectionFactory {
 	
 	public Connection getConnection() {
 		try {
-			return DriverManager.getConnection("jdbc://postgresql://"+ip+":"+port+"/"+database, user, password);
+			return DriverManager.getConnection("jdbc:postgresql://"+ip+":"+port+"/"+database, user, password);
 		}catch(SQLException e) {
 			throw new RuntimeException(e);
 		}

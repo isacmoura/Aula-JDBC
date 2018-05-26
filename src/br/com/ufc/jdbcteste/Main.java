@@ -78,7 +78,11 @@ public class Main {
 				
 				Livro livro = new Livro(titulo, autor, editora);
 				
-				livroDAO.adicionarLivro(livro);
+				if(livroDAO.adicionarLivro(livro)) {
+					System.out.println("Livro adicionado");
+				}else {
+					System.err.println("Ocorreu um erro ao adicionar o livro");
+				}
 				break;
 				
 			case 5:
